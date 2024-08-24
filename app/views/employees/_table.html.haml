@@ -1,0 +1,26 @@
+%table.table.table-striped.small
+  %thead
+    %tr
+      %th #
+      %th= t('.name')
+      %th= t('.cpf')
+      %th= t('.birthdate')
+      %th= t('.salary')
+      %th= t('.social_security_discount')
+      %th= t('.address')
+      %th= t('.personal_phone')
+      %th= t('.reference_phone')
+  %tbody
+    - @employees.each do |employee|
+      %tr
+        %td= employee.id
+        %td= employee.name
+        %td= employee.cpf
+        %td= employee.birthdate.to_fs
+        %td= employee.salary_as_currency
+        %td= employee.discount_as_currency
+        %td= employee.address
+        %td= employee.personal_phone
+        %td= employee.reference_phone
+
+= paginate @employees

@@ -1,7 +1,26 @@
 pt-BR:
   app_name: 'Desconto INSS'
+  views:
+    pagination:
+      first: "&laquo; Primeira"
+      last: "Última &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Próxima &rsaquo;"
+      truncate: "&hellip;"
   layouts:
     navbar:
       employees: 'Funcionários'
       reports: 'Relatórios'
       log_out: 'Sair'
+  employees:
+    index:
+      title: 'Listagem de Funcionários'
+    table:
+      name: 'Nome'
+      cpf: 'CPF'
+      birthdate: 'Data de Nascimento'
+      salary: 'Salário'
+      social_security_discount: 'Desconto INSS'
+      address: 'Endereço'
+      personal_phone: 'Telefone'
+      reference_phone: 'Telefone de Referência'
