@@ -1,1 +1,7 @@
 pt-BR:
+  app_name: 'Desconto INSS'
+  layouts:
+    navbar:
+      employees: 'Funcionários'
+      reports: 'Relatórios'
+      log_out: 'Sair'

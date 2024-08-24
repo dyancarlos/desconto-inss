@@ -1,0 +1,8 @@
+%h5.mb-3= t('app_name')
+%ul.nav.nav-tabs
+  %li.nav-item
+    = link_to t('.employees'), employees_path, class: "#{active_tab('employees')} nav-link"
+  %li.nav-item
+    = link_to t('.reports'), reports_path, class: "#{active_tab('reports')} nav-link"
+  %li.nav-item
+    = link_to t('.log_out'), destroy_user_session_path, data: { turbo_method: :delete }, class: 'nav-link'
