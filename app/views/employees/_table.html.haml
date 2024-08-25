@@ -10,6 +10,7 @@
       %th= t('.address')
       %th= t('.personal_phone')
       %th= t('.reference_phone')
+      %th{ style: "width: 11%" }
   %tbody
     - @employees.each do |employee|
       %tr
@@ -22,5 +23,14 @@
         %td= employee.address
         %td= employee.personal_phone
         %td= employee.reference_phone
+        %td
+          = link_to t('.update'),
+            edit_employee_path(employee),
+            class: 'btn btn-sm btn-primary'
+
+          = link_to t('.delete'),
+            employee_path(employee),
+            data: { turbo_method: :delete, turbo_confirm: t('.confirm') },
+            class: 'btn btn-sm btn-primary'
 
 = paginate @employees
