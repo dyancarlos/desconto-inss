@@ -1,31 +1,37 @@
-= form_with model: @employee, autocomplete: 'off' do |f|
+= form_with model: @employee, autocomplete: 'off', data: { turbo: false } do |f|
   .card.mb-3
     .card-body
       .row.mb-3
         .col
           = f.label :name, class: 'form-label'
           = f.text_field :name, class: 'form-control'
+          = render 'shared/validation_messages', resource: @employee, field: :name
         .col-3
           = f.label :cpf, class: 'form-label'
           = f.text_field :cpf, class: 'form-control'
+          = render 'shared/validation_messages', resource: @employee, field: :cpf
 
       .row.mb-3
         .col
           = f.label :personal_phone, class: 'form-label'
           = f.text_field :personal_phone, class: 'form-control'
+          = render 'shared/validation_messages', resource: @employee, field: :personal_phone
         .col
           = f.label :reference_phone, class: 'form-label'
           = f.text_field :reference_phone, class: 'form-control'
+          = render 'shared/validation_messages', resource: @employee, field: :reference_phone
 
       .row.mb-3{ data: { controller: 'dynamic-discount-calculation' } }
         .col
           = f.label :birthdate, class: 'form-label'
           = f.text_field :birthdate, class: 'form-control'
+          = render 'shared/validation_messages', resource: @employee, field: :birthdate
         .col
           = f.label :salary, class: 'form-label'
           = f.text_field :salary,
             class: 'form-control',
             data: { action: 'dynamic-discount-calculation#calculateDiscount' }
+          = render 'shared/validation_messages', resource: @employee, field: :salary
 
         .col
           = f.label :social_security_discount, class: 'form-label'
@@ -39,6 +45,7 @@
         .col-2
           = f.label :street_number, class: 'form-label'
           = f.text_field :street_number, class: 'form-control'
+          = render 'shared/validation_messages', resource: @employee, field: :street_number
 
       .row.mb-3
         .col
@@ -50,6 +57,7 @@
         .col-1
           = f.label :state, class: 'form-label'
           = f.select :state, State::AVAILABLE_STATES, { include_blank: true }, class: 'form-select'
+          = render 'shared/validation_messages', resource: @employee, field: :state
         .col
           = f.label :zipcode, class: 'form-label'
           = f.text_field :zipcode, class: 'form-control'

@@ -1,5 +1,9 @@
 @import 'bootstrap';
 
+.field_with_errors input {
+    border-color: #dd3b4b;
+}
+
 .pagination a, .pagination span.current, .pagination span.gap {
     float: left;
     padding: 0 14px;

@@ -9,7 +9,7 @@ FactoryBot.define do
     salary_cents { 500000 }
     social_security_discount_cents { 10000 }
     street_name { Faker::Address.street_name }
-    street_number { Faker::Address.building_number }
+    street_number { rand(10000) }
     district { 'Center' }
     city { Faker::Address.city }
     state { Faker::Address.state_abbr }

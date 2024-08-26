@@ -9,6 +9,7 @@ class Employee < ApplicationRecord
   validates :personal_phone, phone: true
   validates :reference_phone, phone: true, if: -> { reference_phone.present? }
   validates :state, inclusion: { in: State::AVAILABLE_STATES }, if: -> { state.present? }
+  validates :street_number, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, if: -> { street_number.present? }
   validate :validate_cpf_format
 
   def address

@@ -15,7 +15,7 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(employee_params)
 
-    if @employee.save!
+    if @employee.save
       redirect_to employees_path, notice: t(".success")
     else
       render :new

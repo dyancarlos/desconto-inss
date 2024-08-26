@@ -1,0 +1,4 @@
+- if resource.errors.messages[field].any?
+  - resource.errors.messages[field].each do |error_message|
+    %div
+      %small.text-danger= error_message.capitalize
