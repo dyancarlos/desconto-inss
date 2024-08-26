@@ -24,6 +24,13 @@ class EmployeesController < ApplicationController
   end
 
   def update
+    @service  = Employees::UpdateService.new(@employee, employee_params)
+
+    if @service.update
+      redirect_to employees_path, notice: t(".success")
+    else
+      render :edit
+    end
   end
 
   def destroy

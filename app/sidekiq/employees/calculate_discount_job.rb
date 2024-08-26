@@ -1,4 +1,4 @@
-class CalculateEmployeeDiscountJob
+class Employees::CalculateDiscountJob
   include Sidekiq::Job
 
   def perform(employee_id)
