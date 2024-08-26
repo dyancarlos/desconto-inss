@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :employees
-  resource :reports
+  resource :employee_discounts, only: :show
+  resource :reports, only: :show
 end

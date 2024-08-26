@@ -1,9 +1,11 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ['discountField'];
+  static targets = ['salaryField', 'discountField'];
 
   calculateDiscount() {
-    this.discountFieldTarget.innerHTML = 10;
+    fetch(this.salaryFieldTarget.dataset.path + "?salary=" + this.salaryFieldTarget.value)
+      .then(response => response.json())
+      .then(json => this.discountFieldTarget.innerHTML = json.discount);
   }
 }

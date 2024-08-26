@@ -30,13 +30,14 @@
           = f.label :salary, class: 'form-label'
           = f.text_field :salary,
             class: 'form-control',
-            data: { action: 'dynamic-discount-calculation#calculateDiscount' }
+            'data-dynamic-discount-calculation-target' => 'salaryField',
+            data: { action: 'dynamic-discount-calculation#calculateDiscount', path: employee_discounts_path }
           = render 'shared/validation_messages', resource: @employee, field: :salary
 
         .col
           = f.label :social_security_discount, class: 'form-label'
           %div{ 'data-dynamic-discount-calculation-target' => 'discountField' }
-            = f.object.social_security_discount
+            = f.object.social_security_discount.format
 
       .row.mb-3
         .col
