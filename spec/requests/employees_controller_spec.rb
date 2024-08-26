@@ -26,7 +26,7 @@ RSpec.describe EmployeesController, type: :request do
             personal_phone: '54999971994',
             reference_phone: '54999971995',
             birthdate: '26/05/1993',
-            salary: '5.000,00',
+            salary: '3.000,00',
             street_name: 'Rua do comercio',
             street_number: '123',
             district: 'Centro',
@@ -41,12 +41,13 @@ RSpec.describe EmployeesController, type: :request do
         expect { create_subject }.to change { Employee.count }.by(1)
       end
 
-      it 'creates a new Employee with the correct data' do
+      it 'creates a new Employee with the correct data', :perform_sidekiq_jobs do
         create_subject
         employee = Employee.last
-        expect(employee.salary_cents).to eq 500_000
+        expect(employee.salary_cents).to eq 300000
+        expect(employee.social_security_discount_cents).to eq 28162
         expect(employee.salary_currency).to eq 'BRL'
-        expect(employee.salary.format).to eq 'R$5.000,00'
+        expect(employee.salary.format).to eq 'R$3.000,00'
         expect(employee.birthdate.to_fs).to eq '26/05/1993'
       end
     end

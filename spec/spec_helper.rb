@@ -14,6 +14,7 @@
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'active_support/testing/time_helpers'
+require 'sidekiq/testing'
 require 'devise'
 
 RSpec.configure do |config|

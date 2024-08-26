@@ -61,4 +61,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.around(:each, :perform_sidekiq_jobs) do |example|
+    Sidekiq::Testing.inline! do
+      example.run
+    end
+  end
 end

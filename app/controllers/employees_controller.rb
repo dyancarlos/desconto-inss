@@ -13,9 +13,10 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    @employee = Employee.new(employee_params)
+    @service  = Employees::CreateService.new(employee_params)
+    @employee = @service.employee
 
-    if @employee.save
+    if @service.save
       redirect_to employees_path, notice: t(".success")
     else
       render :new
