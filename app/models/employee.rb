@@ -1,11 +1,14 @@
 class Employee < ApplicationRecord
   paginates_per 5
 
-  validates :name, :cpf, :birthdate, :personal_phone,
-            :salary, :social_security_discount, presence: true
+  monetize :salary_cents, numericality: { greater_than_or_equal_to: 0 }
+  monetize :social_security_discount_cents, numericality: { greater_than_or_equal_to: 0 }
 
+  validates :name, :cpf, :birthdate, :personal_phone, :salary, :social_security_discount, presence: true
+  validates :cpf, uniqueness: true
   validates :personal_phone, phone: true
   validates :reference_phone, phone: true, if: -> { reference_phone.present? }
+  validates :state, inclusion: { in: State::AVAILABLE_STATES }, if: -> { state.present? }
   validate :validate_cpf_format
 
   def address
@@ -17,14 +20,6 @@ class Employee < ApplicationRecord
       state,
       zipcode
     ].join(", ")
-  end
-
-  def salary_as_currency
-    Money.from_cents(salary, "BRL").format
-  end
-
-  def discount_as_currency
-    Money.from_cents(social_security_discount, "BRL").format
   end
 
   private

@@ -3,10 +3,10 @@ class CreateEmployees < ActiveRecord::Migration[7.2]
     create_table :employees do |t|
       # Personal Information
       t.string :name, null: false
-      t.string :cpf, null: false
+      t.string :cpf, null: false, index: { unique: true }
       t.date :birthdate, null: false
-      t.integer :salary, null: false, default: 0
-      t.integer :social_security_discount, null: false, default: 0
+      t.monetize :salary, null: false, default: 0
+      t.monetize :social_security_discount, null: false, default: 0
 
       # Address
       t.string :street_name

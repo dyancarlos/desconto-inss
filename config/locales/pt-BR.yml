@@ -1,5 +1,21 @@
 pt-BR:
   app_name: 'Desconto INSS'
+  activerecord:
+    attributes:
+      employee:
+        name: 'Nome'
+        cpf: 'CPF'
+        birthdate: 'Data de Nascimento'
+        salary: 'Salário'
+        social_security_discount: 'Desconto INSS'
+        personal_phone: 'Telefone'
+        reference_phone: 'Telefone de Referência'
+        street_name: 'Logradouro'
+        street_number: 'Número'
+        district: 'Bairro'
+        city: 'Cidade'
+        state: 'Estado'
+        zipcode: 'CEP'
   views:
     pagination:
       first: "&laquo; Primeira"
@@ -13,8 +29,15 @@ pt-BR:
       reports: 'Relatórios'
       log_out: 'Sair'
   employees:
+    form:
+      create: 'Salvar'
+    new:
+      title: 'Novo Funcionário'
+    edit:
+      title: 'Editar Funcionário'
     index:
       title: 'Listagem de Funcionários'
+      new: 'Novo Funcionário'
     table:
       name: 'Nome'
       cpf: 'CPF'

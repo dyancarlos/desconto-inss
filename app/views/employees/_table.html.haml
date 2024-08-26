@@ -18,8 +18,8 @@
         %td= employee.name
         %td= employee.cpf
         %td= employee.birthdate.to_fs
-        %td= employee.salary_as_currency
-        %td= employee.discount_as_currency
+        %td= employee.salary.format
+        %td= employee.social_security_discount.format
         %td= employee.address
         %td= employee.personal_phone
         %td= employee.reference_phone

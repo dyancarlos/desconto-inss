@@ -21,6 +21,17 @@ RSpec.describe Employee, type: :model do
     expect(employee).to be_valid
   end
 
+  it 'validates cpf uniqueness' do
+    create(:employee, cpf: '15892023095')
+    employee = build(:employee, cpf: '15892023095')
+    expect(employee).not_to be_valid
+  end
+
+  it 'validates negative salary' do
+    employee = build(:employee, salary: '-1')
+    expect(employee).not_to be_valid
+  end
+
   it 'validates phone incorrect format' do
     employee = build(:employee, personal_phone: '123456')
     expect(employee).not_to be_valid

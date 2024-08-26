@@ -14,6 +14,52 @@ RSpec.describe EmployeesController, type: :request do
     end
   end
 
+  describe 'POST /create' do
+    subject(:create_subject) { post employees_path, params: params }
+
+    context 'with valid params' do
+      let(:params) do
+        {
+          employee: {
+            name: 'Dyan',
+            cpf: '86094872029',
+            personal_phone: '54999971994',
+            reference_phone: '54999971995',
+            birthdate: '26/05/1993',
+            salary: '5.000,00',
+            street_name: 'Rua do comercio',
+            street_number: '123',
+            district: 'Centro',
+            city: 'Ibiaca',
+            state: 'RS',
+            zipcode: '99940000'
+          }
+        }
+      end
+
+      it 'creates a new Employee' do
+        expect { create_subject }.to change { Employee.count }.by(1)
+      end
+
+      it 'creates a new Employee with the correct data' do
+        create_subject
+        employee = Employee.last
+        expect(employee.salary_cents).to eq 500_000
+        expect(employee.salary_currency).to eq 'BRL'
+        expect(employee.salary.format).to eq 'R$5.000,00'
+        expect(employee.birthdate.to_fs).to eq '26/05/1993'
+      end
+    end
+
+    context 'with invalid params' do
+      let(:params) { { employee: { name: '' } } }
+
+      it 'does not creates a Employee' do
+        expect { create_subject }.to change { Employee.count }.by(0)
+      end
+    end
+  end
+
   describe 'DELETE /destroy' do
     let!(:employee) { create(:employee) }
 

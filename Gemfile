@@ -17,7 +17,7 @@ gem "bootstrap", "~> 5.3.3"
 gem "sassc-rails"
 gem "phonelib"
 gem "cpf_cnpj"
-gem "money"
+gem "money-rails"
 
 group :tools do
   gem "rubocop", require: false
