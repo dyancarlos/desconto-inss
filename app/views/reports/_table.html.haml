@@ -1,0 +1,10 @@
+%table.table.table-striped.small
+  %thead
+    %tr
+      %th= t('.salary')
+      %th= t('.count')
+  %tbody
+    - @report.each do |salary_range, count|
+      %tr
+        %td= salary_range
+        %td= count

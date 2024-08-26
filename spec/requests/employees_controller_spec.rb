@@ -37,7 +37,7 @@ RSpec.describe EmployeesController, type: :request do
         }
       end
 
-      it 'creates a new Employee' do
+      it 'creates a new Employee', :perform_sidekiq_jobs do
         expect { create_subject }.to change { Employee.count }.by(1)
       end
 

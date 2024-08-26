@@ -1,0 +1,2 @@
+%div{ data: { controller: 'report-chart' } }
+  %canvas#salaryRangeChart{ 'data-report-chart-target' => 'salaryRangeChart', data: { label: @report.keys.join(';'), data: @report.values.join(';') } }

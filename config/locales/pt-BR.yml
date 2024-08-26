@@ -1,5 +1,8 @@
 pt-BR:
   app_name: 'Desconto INSS'
+  common:
+    from: 'De '
+    to: ' até '
   activerecord:
     errors:
       format: "%{attribute} %{message}"
@@ -67,6 +70,12 @@ pt-BR:
       employees: 'Funcionários'
       reports: 'Relatórios'
       log_out: 'Sair'
+  reports:
+    show:
+      title: 'Relatórios'
+    table:
+      salary: 'Faixa Salarial'
+      count: 'Quantidade de Funcionários'
   employees:
     form:
       create: 'Salvar'
