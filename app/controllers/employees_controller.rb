@@ -27,7 +27,7 @@ class EmployeesController < ApplicationController
 
   def destroy
     if @employee.destroy
-      redirect_to employees_path, notice: t(".destroy")
+      redirect_to employees_path, notice: t(".success")
     end
   end
 

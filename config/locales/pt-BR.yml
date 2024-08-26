@@ -38,6 +38,10 @@ pt-BR:
     index:
       title: 'Listagem de Funcionários'
       new: 'Novo Funcionário'
+    destroy:
+      success: 'Funcionário excluído com sucesso.'
+    create:
+      success: 'Funcionário criado com sucesso.'
     table:
       name: 'Nome'
       cpf: 'CPF'

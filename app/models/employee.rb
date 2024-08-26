@@ -19,7 +19,7 @@ class Employee < ApplicationRecord
       city,
       state,
       zipcode
-    ].join(", ")
+    ].reject(&:blank?).join(", ")
   end
 
   private
