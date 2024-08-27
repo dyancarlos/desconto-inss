@@ -36,8 +36,10 @@
 
         .col
           = f.label :social_security_discount, class: 'form-label'
-          %div{ 'data-dynamic-discount-calculation-target' => 'discountField' }
-            = f.object.social_security_discount.format
+          = f.text_field :social_security_discount,
+            'data-dynamic-discount-calculation-target' => 'discountField',
+            class: 'form-control',
+            readonly: 'readonly'
 
       .row.mb-3
         .col

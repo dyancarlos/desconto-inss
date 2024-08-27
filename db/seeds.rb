@@ -10,5 +10,5 @@ FactoryBot.create(
 
 puts '---------> Creating Employees'
 FactoryBot.create_list(
-  :employee, 10
+  :employee, 20, :with_discount_calculation
 )

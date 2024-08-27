@@ -9,7 +9,7 @@ class Employees::CreateService
     return if @employee.invalid?
 
     if @employee.save
-      Employees::CalculateDiscountJob.perform_async(@employee.id)
+      Employees::CalculateNetSalaryJob.perform_async(@employee.id)
     end
   end
 end

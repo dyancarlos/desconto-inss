@@ -10,7 +10,7 @@ class Employees::UpdateService
     return if @employee.invalid?
 
     if @employee.update(@params)
-      Employees::CalculateDiscountJob.perform_async(@employee.id)
+      Employees::CalculateNetSalaryJob.perform_async(@employee.id)
     end
   end
 end

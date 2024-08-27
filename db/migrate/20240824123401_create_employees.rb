@@ -6,6 +6,7 @@ class CreateEmployees < ActiveRecord::Migration[7.2]
       t.string :cpf, null: false, index: { unique: true }
       t.date :birthdate, null: false
       t.monetize :salary, null: false, default: 0
+      t.monetize :net_salary, null: false, default: 0
       t.monetize :social_security_discount, null: false, default: 0
 
       # Address

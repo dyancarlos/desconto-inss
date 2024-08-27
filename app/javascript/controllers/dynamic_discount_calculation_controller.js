@@ -6,6 +6,6 @@ export default class extends Controller {
   calculateDiscount() {
     fetch(this.salaryFieldTarget.dataset.path + "?salary=" + this.salaryFieldTarget.value)
       .then(response => response.json())
-      .then(json => this.discountFieldTarget.innerHTML = json.discount);
+      .then(json => this.discountFieldTarget.value = json.discount);
   }
 }

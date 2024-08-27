@@ -27,6 +27,7 @@ RSpec.describe EmployeesController, type: :request do
             reference_phone: '54999971995',
             birthdate: '26/05/1993',
             salary: '3.000,00',
+            social_security_discount: '281,62',
             street_name: 'Rua do comercio',
             street_number: '123',
             district: 'Centro',

@@ -53,6 +53,7 @@ class EmployeesController < ApplicationController
       :reference_phone,
       :birthdate,
       :salary,
+      :social_security_discount,
       :street_name,
       :street_number,
       :district,

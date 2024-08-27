@@ -3,6 +3,7 @@ class Employee < ApplicationRecord
 
   monetize :salary_cents, numericality: { greater_than_or_equal_to: 0 }
   monetize :social_security_discount_cents, numericality: { greater_than_or_equal_to: 0 }
+  monetize :net_salary_cents, numericality: { greater_than_or_equal_to: 0 }
 
   validates :name, :cpf, :birthdate, :personal_phone, :salary, :social_security_discount, presence: true
   validates :cpf, uniqueness: true

@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_24_123401) do
     t.date "birthdate", null: false
     t.integer "salary_cents", default: 0, null: false
     t.string "salary_currency", default: "BRL", null: false
+    t.integer "net_salary_cents", default: 0, null: false
+    t.string "net_salary_currency", default: "BRL", null: false
     t.integer "social_security_discount_cents", default: 0, null: false
     t.string "social_security_discount_currency", default: "BRL", null: false
     t.string "street_name"

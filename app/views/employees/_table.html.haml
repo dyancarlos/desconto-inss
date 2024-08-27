@@ -5,6 +5,7 @@
       %th= t('.name')
       %th= t('.cpf')
       %th= t('.birthdate')
+      %th= t('.net_salary')
       %th= t('.salary')
       %th= t('.social_security_discount')
       %th= t('.address')
@@ -18,6 +19,7 @@
         %td= employee.name
         %td= employee.cpf
         %td= employee.birthdate.to_fs
+        %td= employee.net_salary.format
         %td= employee.salary.format
         %td= employee.social_security_discount.format
         %td= employee.address
