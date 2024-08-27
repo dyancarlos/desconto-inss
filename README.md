@@ -1,6 +1,13 @@
 # Desconto INNS
 Aplicação Rails para cadastro de funcionários, calculos de desconto de INSS e relatório.
 
+<img width="1796" alt="Screenshot 2024-08-26 at 22 03 36" src="https://github.com/user-attachments/assets/16f4b549-a3d9-42f9-be6e-fab6d325809e">
+<img width="1796" alt="Screenshot 2024-08-26 at 22 04 38" src="https://github.com/user-attachments/assets/ed72dc7c-ac95-4e8f-a476-a68e7c26aaa2">
+<img width="1796" alt="Screenshot 2024-08-26 at 22 04 29" src="https://github.com/user-attachments/assets/803aabd2-2b3d-4685-8f4b-ea89babe9797">
+<img width="1796" alt="Screenshot 2024-08-26 at 22 04 25" src="https://github.com/user-attachments/assets/8401f9be-f0be-46f5-bf29-8d0ee0d2ac49">
+<img width="1796" alt="Screenshot 2024-08-26 at 22 04 17" src="https://github.com/user-attachments/assets/06dfd013-45ed-4259-bac0-f5394c5ef861">
+
+
 ### Estrutura do Projeto:
 Além da estrutura padrão Rails, mais alguns diretórios foram adicionados:
 * `app/sidekiq`: Reponsável por lidar com tarefas que rodam no background;
