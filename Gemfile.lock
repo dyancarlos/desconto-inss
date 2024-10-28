@@ -220,7 +220,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.7)
-    phonelib (0.9.1)
+    phonelib (0.9.3)
     popper_js (2.11.8)
     psych (5.1.2)
       stringio
